@@ -1,0 +1,86 @@
+* {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+
+}
+
+body {
+    background-color: rgb(51, 88, 64);
+}
+
+.add-products {
+    height: 600px;
+    border: none;
+    border-radius: 10px;
+    display: block;
+    width: 1000px;
+    padding: 10px;
+    margin-left: 10%;
+    background-color: rgb(52, 52, 52);
+    color: #fff;
+    padding-top: 40px;
+}
+
+/* label {
+    width: 100%;
+} */
+.productAttributes {
+    display: flex;
+    margin-left: 100px;
+}
+
+.identifier {
+    width: 20%;
+    padding: 10px;
+    /* background-color: blueviolet; */
+}
+
+.inputs {
+    width: 60%;
+    /* height: 20px; */
+    padding: 10px;
+    /* background-color: aqua; */
+}
+
+.inputs input {
+    height: 40px;
+    width: 100%;
+    border: 1px solid rgb(165, 158, 158);
+    background-color: rgb(52, 52, 52);
+    padding: 5px 10px;
+    border-radius: 5px;
+    caret-color: rgb(255, 255, 255);
+    color: #fff;
+}
+
+.inputs input[type=file] {
+    /* background-color: black; */
+    margin-top: 20px;
+    background-color: transparent;
+    border: none;
+}
+
+.submit-btn {
+    width: 200px;
+    height: 50px;
+    margin-left: 40%;
+    margin-top: 30px;
+    font-size: 25px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #fff;
+    background-color: black;
+}
+
+.submit-btn:hover {
+    transition: 1s;
+    height: 55px;
+    width: 250px;
+}
+
+#message {
+    margin-left: 45%;
+    color: red;
+}

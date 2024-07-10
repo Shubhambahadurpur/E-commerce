@@ -1,0 +1,192 @@
+* {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    /* margin: 0;
+    padding: 0; */
+}
+body{
+    background-color: rgb(51, 88, 64);
+    margin-left: 0;
+}
+.navbar {
+    background-color: rgb(16, 16, 16);
+    /* width: 1500px; */
+    width: 99.2%;
+    height:80px;
+    display: flex;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    color: #fff;
+    padding: 10px;
+    margin-left: 0;
+}
+.profile-div{
+    /* float: right;
+    position: absolute; */
+    margin-left: 75%;
+    margin-top: 20px;
+    display: flex;
+}
+.profile {
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+    border: none;
+    background-color: rgb(52, 52, 52);
+    color: #fff;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.profile:hover {
+    background-color: #fff;
+    color: #000;
+    transition: .7s;
+}
+.logout {
+    height: 40px;
+    /* float: right; */
+    /* clear: both; */
+    font-size: 20px;
+    right: 20px;
+    /* position: absolute; */
+    border-radius: 20px;
+    padding: 5px;
+    top: 20px;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 20px;
+}
+.logout:hover{
+    background-color: rgb(52, 52, 52);
+    transition: 1s;
+
+}
+.add-products{
+    height: 40px;
+    /* float: right; */
+    /* clear: both; */
+    font-size: 20px;
+    right: 20px;
+    /* position: absolute; */
+    border-radius: 20px;
+    padding: 5px;
+    top: 20px;
+    border: none;
+    background-color: red;
+    color: #fff;
+    cursor: pointer;
+    width: 200px;
+}
+
+.product-section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product {
+    width: 14.5%;
+    background-color: rgb(12, 12, 12);
+    margin-top: 10px;
+    padding: 20px 30px;
+    margin-left: 20px;
+    color: #fff;
+    border-radius: 5px;
+    
+
+}
+
+.image img {
+    height: 250px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.buttons {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons button {
+    width: 49%;
+    height: 40px;
+    border: none;
+    background-color: rgb(63, 63, 63);
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+.buttons button:hover{
+    background-color: white;
+    color: #000;
+    transition: 1s;
+}
+#loadmore{
+    margin-left: 43%;
+    margin-top: 20px;
+    background-color: rgb(63, 63, 63);
+    color: #fff;
+    height: 40px;
+    width: 200px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+
+}
+.block-background {
+    pointer-events: none;
+}
+
+.product-details {
+    width: 80%;
+    height: 500px;
+    background-color: rgb(39, 42, 39);
+    position: fixed;
+    z-index: 2;
+    display: flex;
+    padding: 40px 0 40px 40px;
+    left: 10%;
+    top: 10%;
+    color: #fff;
+}
+
+.image-section img {
+    width: 100%;
+    height: 500px;
+}
+
+.details {
+    margin-left: 20px;
+}
+
+.close {
+    height: 20px;
+    margin-left: 180px;
+    margin-top: 0;
+    font-size: 30px;
+    border:none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.buy-btn{
+    width: 90%;
+    height: 40px;
+    border: none;
+    background-color: rgb(63, 63, 63);
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top:100px;
+
+}
+.buy-btn:hover{
+    background-color: white;
+    color: #000;
+    transition: 1s;
+}

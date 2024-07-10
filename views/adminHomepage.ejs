@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="signup.css"> -->
+    <title>user</title>
+    <link rel="stylesheet" href="homepage.css">
+    <!-- <link rel="stylesheet" href="admin_addProducts.css"> -->
+    <style>
+        .profile-div {
+            margin-left:50%;
+            margin-top: 20px;
+            display: flex;
+        }
+
+        .add-products {
+            height: 40px;
+            font-size: 20px;
+            right: 20px;
+            border-radius: 20px;
+            padding: 5px;
+            top: 20px;
+            border: none;
+            background-color: red;
+            color: #fff;
+            cursor: pointer;
+            width: 200px;
+        }
+
+        .update-products {
+            margin-left: 10px;
+            height: 40px;
+            font-size: 20px;
+            right: 20px;
+            border-radius: 20px;
+            padding: 5px;
+            top: 20px;
+            border: none;
+            background-color: red;
+            color: #fff;
+            cursor: pointer;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container"  id="container">
+        <div class="navbar">
+            <h1>E-commerce</h1>
+            <div class="profile-div">
+                <button class="add-products" id="add-products">
+                    Add Products
+                </button>
+                <button class="update-products" id="update-products">
+                    Update Products
+                </button>
+                <button class="logout" id=<%=name %> onclick = logOut(this)>Logout</button>
+            </div>
+        </div>
+        <div class="product-section" id="product-section">
+
+            <% for (let i=0; i < array.length; i++) { %>
+                <div class="product">
+                    <div class="image">
+                        <img src="<%= array[i].productImage %>" alt="">
+                    </div>
+                    <div class="product-name">
+                        <%= array[i].productName %>
+                    </div>
+                    <div class="buttons">
+                        <button class="cart">ADD TO CART</button>
+                        <button class="detail" id=<%=array[i]._id %> onclick = "viewDetails(this)">View
+                            Details</button>
+                    </div>
+                </div>
+                <% } %>
+
+        </div>
+        <button id="loadmore">Load More</button>
+    </div>
+    <script src="adminHomepage.js"></script>
+</body>
+
+</html>

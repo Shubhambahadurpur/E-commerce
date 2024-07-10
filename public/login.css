@@ -1,0 +1,28 @@
+.login{
+    background-color: aqua;
+    height:550px;
+    width: 20%;
+    margin-left: 30%;
+    margin-top: 5%;
+    font-family: "Gill Sans", sans-serif;
+    padding: 2% 5% 2% 5%;
+}
+h1{
+    font-size: xx-large;
+    margin-left: 30%;
+}
+.inputs{
+    display: block;
+    margin-top: 50px;
+}
+.inputs input{
+    width: 90%;
+    height: 30px;
+    margin-top: 20px;
+}
+.login-btn{
+    height: 30px;
+    margin-top: 20px;
+    width: 60%;
+    margin-left: 15%;
+}

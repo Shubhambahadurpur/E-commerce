@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <div class="signup">
+        <h1>Sign Up</h1>
+        <div class="inputs">
+            <label for="email">Email<input type="text" placeholder="Email" name="email" id="email" required/></label>
+            <label for="password">Password<input type="text" placeholder="Password" name="password" id="password" required/></label>
+            <div id="password-credentials" class="password-credentials">
+                <ul>
+                    <li id="length">Minimum 8 characters long</li>
+                    <li id="upper-case">One Uppercase letter at least</li>
+                    <li id="lower-case">One lowercase letter at least</li>
+                    <li id="oneNumber">One Number</li>
+                </ul>
+            </div>
+        </div>
+        
+        <button class="signup-btn" id="btn">Sign Up</button>
+        <h4>Already user? <a href="/login">Login</a></h4>
+        <div id="message"></div>
+    </div>
+    
+    <script src="signup.js"></script>
+    
+</body>
+</html>

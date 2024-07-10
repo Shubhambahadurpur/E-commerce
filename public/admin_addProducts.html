@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <style>
+        * {
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+
+        }
+
+        body {
+            background-color: rgb(51, 88, 64);
+        }
+
+        .add-products {
+            height: 600px;
+            border: none;
+            border-radius: 10px;
+            display: block;
+            width: 1000px;
+            padding: 10px;
+            margin-left: 10%;
+            background-color: rgb(52, 52, 52);
+            color: #fff;
+            padding-top: 40px;
+        }
+
+        /* label {
+            width: 100%;
+        } */
+        .productAttributes {
+            display: flex;
+            margin-left: 100px;
+        }
+
+        .identifier {
+            width: 20%;
+            padding: 10px;
+            /* background-color: blueviolet; */
+        }
+
+        .inputs {
+            width: 60%;
+            /* height: 20px; */
+            padding: 10px;
+            /* background-color: aqua; */
+        }
+
+        .inputs input {
+            height: 40px;
+            width: 100%;
+            border: 1px solid rgb(165, 158, 158);
+            background-color: rgb(52, 52, 52);
+            padding: 5px 10px;
+            border-radius: 5px;
+            caret-color: rgb(255, 255, 255);
+            color: #fff;
+        }
+
+        .inputs input[type=file] {
+            /* background-color: black; */
+            margin-top: 20px;
+            background-color: transparent;
+            border: none;
+        }
+
+        .submit-btn {
+            width: 200px;
+            height: 50px;
+            margin-left: 40%;
+            margin-top: 30px;
+            font-size: 25px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            color: #fff;
+            background-color: black;
+        }
+
+        .submit-btn:hover {
+            transition: 1s;
+            height: 55px;
+            width: 250px;
+        }
+
+        #message {
+            margin-left: 45%;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="myForm" enctype="multipart/form-data" method="post">
+        <div class="add-products">
+            <div class="productAttributes">
+                <div class="identifier">
+                    <h3>Product Name</h3>
+                </div>
+                <div class="inputs">
+                    <input type="text" name="productName" placeholder="Product Name" id="productName" required />
+                </div>
+            </div>
+
+            <div class="productAttributes">
+                <div class="identifier">
+                    <h3>Product Description</h3>
+                </div>
+                <div class="inputs">
+                    <input type="text" name="productDescription" placeholder="Product Description"
+                        id="productDescription" required />
+                </div>
+            </div>
+
+            <div class="productAttributes">
+                <div class="identifier">
+                    <h3>Product Price</h3>
+                </div>
+                <div class="inputs">
+                    <input type="number" name="productPrice" placeholder="Product Price" id="productPrice" min="100"
+                        required />
+                </div>
+            </div>
+
+            <div class="productAttributes">
+                <div class="identifier">
+                    <h3>Product Quantity</h3>
+                </div>
+                <div class="inputs">
+                    <input type="number" name="productQuantity" placeholder="Product Quantity" id="productQuantity"
+                        min="1" required />
+                </div>
+            </div>
+
+            <div class="productAttributes">
+                <div class="identifier">
+                    <h3>Product Image</h3>
+                </div>
+                <div class="inputs">
+                    <input type="file" name="productImage" placeholder="Product Image" id="productImage"
+                        accept="image/*" required />
+                </div>
+            </div>
+
+            <input type="submit" value="Add products" class="submit-btn">
+            <!-- <button class="submit-btn" id="submitBtn">Add product</button> -->
+            <div id="message"></div>
+        </div>
+    </form>
+
+    <script>
+        // document.forms['myForm'].addEventListener('submit', (event) => {
+        // console.log("hi");
+        // event.preventDefault();
+        // console.log("hello");
+        // })
+        productName.style.borderColor = "none";
+        productDescription.style.borderColor = "none";
+        productPrice.style.borderColor = "none";
+        productQuantity.style.borderColor = "none";
+        productImage.style.borderColor = "none";
+        let form = document.getElementById('myForm');
+        form.addEventListener('submit', async (e) => {
+            let productName = document.getElementById('productName');
+            let productDescription = document.getElementById('productDescription');
+            let productPrice = document.getElementById('productPrice');
+            let productQuantity = document.getElementById('productQuantity');
+            let productImage = document.getElementById('productimage');
+
+            e.preventDefault();
+            let formData = new FormData(form);
+            let formDataObj = {};
+            formData.forEach((key, value) => {
+                formDataObj[value] = key;
+            })
+
+            let opt = {
+                method: 'POST',
+                body: formData,
+            }
+            if (productName.value.trim() == "") {
+                productName.style.borderColor = "red";
+            }
+            else if (productDescription.value.trim() == "") {
+                productDescription.style.borderColor = "red";
+            }
+            else if (productPrice.value.trim() == "") {
+                productPrice.style.borderColor = "red";
+            } else if (productQuantity.value.trim() == "") {
+                productQuantity.style.borderColor = "red";
+            } 
+            else {
+                let response = await fetch("/addproducts", opt);
+                let responseObj = await response.json();
+                if (responseObj == "Done") {
+                    let a = document.querySelectorAll(".inputs");
+                    for (let i = 0; i < a.length; i++) {
+                        a[i].childNodes[1].value = "";
+
+                    }
+                    alert("Product Added");
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>
